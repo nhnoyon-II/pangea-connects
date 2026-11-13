@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body { @apply font-sans text-ink bg-white antialiased pb-[62px]; font-size: 17px; line-height: 1.65; }
+  h1, h2, h3 { @apply font-display text-navy; line-height: 1.12; letter-spacing: -0.01em; }
+  html { scroll-behavior: smooth; }
+  :focus-visible { outline: 3px solid #f5a623; outline-offset: 3px; }
+}
+@layer components {
+  .btn { @apply inline-block cursor-pointer rounded-full border-2 px-7 py-3 font-bold transition duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/25; }
+  .btn-gold { @apply btn border-gold bg-gold text-navy; }
+  .btn-line { @apply btn border-navy text-navy; }
+  .btn-ghost { @apply btn border-white/60 text-white; }
+  .btn-sm { @apply px-5 py-2 text-sm; }
+  .wrap { @apply mx-auto max-w-[1160px] px-[5vw] py-20; }
+  .lead { @apply max-w-[56ch] text-xl text-muted; }
+  .input { @apply mt-1.5 block w-full rounded-2xl border-[1.5px] border-[#cfd9e6] bg-white px-3.5 py-3 focus:border-teal focus:outline-none; }
+}
+@keyframes up { from { opacity: 0; transform: translateY(24px); } }
+.rise { animation: up .7s both; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
