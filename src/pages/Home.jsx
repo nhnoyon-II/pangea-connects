@@ -18,8 +18,15 @@ export default function Home() {
   const [play, setPlay] = useState(false);
   return (
     <>
-      <section className="relative grid min-h-[86vh] items-center gap-[3vw] px-[5vw] pb-[14vh] pt-[8vh] text-white md:grid-cols-[1.1fr_1fr]"
-        style={{ backgroundImage: "linear-gradient(95deg,rgba(30,58,95,.92) 0%,rgba(30,58,95,.62) 45%,rgba(30,58,95,.08) 100%),url(/images/hero.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section className="relative isolate grid min-h-[86vh] items-center gap-[3vw] overflow-hidden px-[5vw] pb-[14vh] pt-[8vh] text-white md:grid-cols-[1.1fr_1fr]">
+  <video className="absolute inset-0 -z-20 h-full w-full object-cover" autoPlay muted loop playsInline preload="auto" poster="/images/hero.jpg" aria-hidden="true">
+    <source src="/hero.webm" type="video/webm" />
+  </video>
+  <div className="absolute inset-0 -z-10" style={{ background: "linear-gradient(95deg,rgba(30,58,95,.92) 0%,rgba(30,58,95,.62) 45%,rgba(30,58,95,.08) 100%)" }} />
+
+
+
+  
         <div>
           <p className="rise mb-5 inline-block rounded-full border border-white/40 bg-white/10 px-4 py-1.5 text-sm">Free for migrants, refugees and students</p>
           <h1 className="rise !text-white text-5xl font-semibold md:text-7xl" style={{ animationDelay: ".1s" }}>{t.h1}</h1>
